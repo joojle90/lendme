@@ -1,0 +1,39 @@
+<div class="main-container">
+    <mat-toolbar class="topbar telative" [style.background]="attr_style ? attr_style.theme1 : default_style.theme1">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">
+                <b>
+                    <!-- <img src="assets/images/lend_me_icon.png" alt="homepage" class="dark-logo"> -->
+                    <img src="assets/images/lend_me_text.png" alt="homepage" class="light-logo" width="60%">
+                </b>
+                <!-- <span fxShow="false" fxShow.gt-xs>
+                     <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo">
+                     <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage">
+                </span> -->
+            </a>
+        </div>
+
+        <button mat-icon-button (click)="snav.toggle()" value="sidebarclosed" [style.color]="attr_style ? attr_style.color1 : default_style.color1">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <span fxFlex></span>
+
+        <app-header></app-header>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
+        <mat-sidenav #snav id="snav" class="dark-sidebar pl-xs" [mode]="mobileQuery.matches ? 'side' : 'over'"
+                     fixedTopGap="0" [opened]="mobileQuery.matches" [disableClose]="mobileQuery.matches">
+            <app-sidebar></app-sidebar>
+        </mat-sidenav>
+
+        <mat-sidenav-content class="page-wrapper">
+            <div class="page-content">
+                <router-outlet>
+                    <app-spinner></app-spinner>
+                </router-outlet>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

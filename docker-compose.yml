@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  mysql:
+      image: mysql:5.7.22
+      container_name: LendmeDB
+      ports:
+        - 3302:3306
+      volumes:
+        - ~/ProjectOps/Databases/lendme:/var/lib/mysql
+      environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: lendme_base
+        MYSQL_USER: lendme
+        MYSQL_PASSWORD: 12345
+#  keycloak:
+#      image: jboss/keycloak
+#      container_name: Inbranch_KC
+#      environment:
+#        DB_VENDOR: MYSQL
+#        DB_ADDR: mysql
+#        DB_DATABASE: inbranch_keycloak
+#        DB_USER: keycloak
+#        DB_PASSWORD: keycloak12345
+#        KEYCLOAK_USER: admin
+#        KEYCLOAK_PASSWORD: Pa55w0rd
+#        # Uncomment the line below if you want to specify JDBC parameters. The parameter below is just an example, and it shouldn't be used in production without knowledge. It is highly recommended that you read the MySQL JDBC driver documentation in order to use it.
+#        #JDBC_PARAMS: "connectTimeout=30000"
+#      ports:
+#        - 8089:8080
+#      depends_on:
+#        - mysql

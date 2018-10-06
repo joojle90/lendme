@@ -1,0 +1,26 @@
+<div id="login" class="signin-card">
+    <div class="logo-image">
+        <img [src]="imagePath" alt="Logo" title="Logo" width="138">
+    </div>
+    <h1 class="title" [style.color]="attr_style ? attr_style.theme2 : default_style.theme2">{{attr_data.title}}</h1>
+    <p class="subtitle">{{attr_data.desc}}</p>
+    <form [formGroup]="signInFormGroup" (ngSubmit)="signInSubmit()" class="login-form" fxLayout="column" fxLayoutGap="15px">
+        <mat-form-field>
+            <input matInput placeholder="Username" formControlName="userId" type="text" required>
+            <mat-error *ngIf="userId.hasError('required')">
+                {{getErrorMessage()}}
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Password" formControlName="password" type="password" required>
+            <mat-error *ngIf="password.hasError('required')">
+                {{getErrorMessage()}}
+            </mat-error>
+        </mat-form-field>
+        <div fxLayout="row" fxLayoutAlign="center">
+            <div class="form-group">
+                <button mat-raised-button [style.background]="attr_style ? attr_style.theme2 : default_style.theme2" type="submit">Sign In</button>
+            </div>
+        </div>
+    </form>
+</div>
