@@ -1,0 +1,34 @@
+.rent-table {
+    margin: auto;
+    max-width: 1200px;
+    margin-top:20px;
+  }
+  
+  :host ::ng-deep #rent-table table {
+    display: inline-table;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  :host ::ng-deep .table thead th {
+    background: rgb(78, 84, 200);
+    color: white;
+  }
+  
+//   :host ::ng-deep .table thead th.column-header {
+//       padding: 20px;
+//       text-align: center;
+//   }
+  
+  :host ::ng-deep .index-column,
+  :host ::ng-deep .index-column-header {
+    text-align: right;
+  }
+  
+  :host ::ng-deep .data-table .data-table-row.selected {
+    background-color: #E4EDF9 !important;
+  }
+  
+  :host ::ng-deep select.form-control:not([size]):not([multiple]) {
+    height: calc(2.25rem + 5px);
+  }

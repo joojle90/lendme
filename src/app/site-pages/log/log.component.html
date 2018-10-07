@@ -1,6 +1,61 @@
 <mat-card>
     <mat-card-content>
-        
+        <mat-card-title class="mat-card-title">Transaction Log List</mat-card-title>
+        <div class="log-table">
+            <data-table #logTable id="log-table"
+                headerTitle="Transaction log"
+                [items]="tableLogData"
+                [itemCount]="dataCount"
+
+                [sortBy]="'insert_date'"
+                [sortAsc]="false"
+                [noDataMessage]="'No record found.'"
+
+                [selectColumn]="true"
+                [multiSelect]="false"
+                [substituteRows]="false"
+                [expandableRows]="true"
+                [indexColumnHeader]="'#'"
+                [selectOnRowClick]="true"
+            >
+                <ng-template #dataTableExpand let-item="item">
+                    <b><i>Credit score : </i></b><div [textContent]="item.credit_score" style="padding: 5px; color: gray"></div>
+                </ng-template>
+                <data-table-column
+                    [property]="'log_id'"
+                    [header]="'ID'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'insert_date'"
+                    [header]="'Insert date'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'customer_id'"
+                    [header]="'Customer'"
+                    [sortable]="true">
+                    <ng-template #dataTableCell let-item="item">
+                        <button (click)="getCustomerDetails(item.customer_id)" class="btn btn-sm btn-primary">{{item.customer_id}}</button>
+                    </ng-template>
+                </data-table-column>
+                <data-table-column
+                    [property]="'customer_status'"
+                    [header]="'Status'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'number_of_lend'"
+                    [header]="'Total lend'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'number_of_rent'"
+                    [header]="'Total rent'"
+                    [sortable]="true">
+                </data-table-column>
+            </data-table>
+        </div>
     </mat-card-content>
 </mat-card>
-    
+        

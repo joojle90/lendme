@@ -1,11 +1,12 @@
-.lend-table {
+
+.customer-table {
     margin: auto;
     max-width: 1200px;
     margin-top:20px;
   }
   
-  :host ::ng-deep #lend-table table {
-    display: inline-table;
+  :host ::ng-deep #customer-table table {
+    display: block;
     overflow-x: auto;
     white-space: nowrap;
   }
@@ -15,9 +16,10 @@
     color: white;
   }
   
-  // :host ::ng-deep .table thead th.column-header {
-  //     text-align: center;
-  // }
+  :host ::ng-deep .table thead th.column-header {
+      padding: 20px;
+      text-align: center;
+  }
   
   :host ::ng-deep .index-column,
   :host ::ng-deep .index-column-header {

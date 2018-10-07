@@ -1,6 +1,74 @@
 <mat-card>
     <mat-card-content>
-        
+        <mat-card-title class="mat-card-title">Borrower List</mat-card-title>
+        <div class="lend-table">
+            <data-table #rentTable id="rent-table"
+                headerTitle="Rent"
+                [items]="tableRentData"
+                [itemCount]="dataCount"
+
+                [sortBy]="'insert_date'"
+                [sortAsc]="false"
+                [noDataMessage]="'No record found.'"
+
+                [selectColumn]="true"
+                [multiSelect]="false"
+                [substituteRows]="false"
+                [expandableRows]="true"
+                [indexColumnHeader]="'#'"
+                [selectOnRowClick]="true"
+            >
+                <ng-template #dataTableExpand let-item="item">
+                    <b><i>Bankin type : </i></b><div [textContent]="item.bankin_type" style="padding: 5px; color: gray"></div>
+                </ng-template>
+                <data-table-column
+                    [property]="'audit_id'"
+                    [header]="'ID'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'insert_date'"
+                    [header]="'Insert date'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'from_customer_id'"
+                    [header]="'From customer'"
+                    [sortable]="true">
+                    <ng-template #dataTableCell let-item="item">
+                        <button (click)="getCustomerDetails(item.from_customer_id)" class="btn btn-sm btn-primary">{{item.from_customer_id}}</button>
+                    </ng-template>
+                </data-table-column>
+                <data-table-column
+                    [property]="'to_customer_id'"
+                    [header]="'To customer'"
+                    [sortable]="true">
+                    <ng-template #dataTableCell let-item="item">
+                        <button (click)="getCustomerDetails(item.to_customer_id)" class="btn btn-sm btn-success">{{item.to_customer_id}}</button>
+                    </ng-template>
+                </data-table-column>
+                <data-table-column
+                    [property]="'amount'"
+                    [header]="'Amount'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'point_of_interest'"
+                    [header]="'Interest'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'status'"
+                    [header]="'Status'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'number_of_month'"
+                    [header]="'Period time'"
+                    [sortable]="true">
+                </data-table-column>
+            </data-table>
+        </div>
     </mat-card-content>
 </mat-card>
-    
+        

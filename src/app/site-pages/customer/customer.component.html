@@ -1,0 +1,108 @@
+<mat-card>
+    <mat-card-content>
+        <mat-card-title class="mat-card-title">Customer List</mat-card-title>
+        <div class="customer-table">
+            <data-table #customerTable id="customer-table"
+                headerTitle="Customer"
+                [items]="tableCustomerData"
+                [itemCount]="dataCount"
+
+                [sortBy]="'insert_date'"
+                [sortAsc]="false"
+                [noDataMessage]="'No record found.'"
+
+                [selectColumn]="true"
+                [multiSelect]="false"
+                [substituteRows]="false"
+                [expandableRows]="true"
+                [indexColumnHeader]="'#'"
+                [selectOnRowClick]="true"
+            >
+                <ng-template #dataTableExpand let-item="item">
+                    <b><i>Customer address : </i></b><div [textContent]="item.address2" style="padding: 5px; color: gray"></div>
+                </ng-template>
+                <data-table-column
+                    [property]="'customer_id'"
+                    [header]="'ID'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'insert_date'"
+                    [header]="'Insert date'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'first_name'"
+                    [header]="'First name'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'last_name'"
+                    [header]="'Last name'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'ic_no'"
+                    [header]="'IC No'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'date_of_birth'"
+                    [header]="'DOB'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'gender'"
+                    [header]="'Gender'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'account_no'"
+                    [header]="'Account no'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'profile_rate'"
+                    [header]="'Profile rate'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'postal_code'"
+                    [header]="'Postal code'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'city'"
+                    [header]="'City'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'state'"
+                    [header]="'State'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'country'"
+                    [header]="'Country'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'mobile_no'"
+                    [header]="'Mobile no'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'email'"
+                    [header]="'Email'"
+                    [sortable]="true">
+                </data-table-column>
+                <data-table-column
+                    [property]="'emergency_contact_no'"
+                    [header]="'Emergency contact no'"
+                    [sortable]="true">
+                </data-table-column>
+            </data-table>
+        </div>
+    </mat-card-content>
+</mat-card>
+    

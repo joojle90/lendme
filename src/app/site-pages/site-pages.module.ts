@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { CdkTableModule } from '@angular/cdk/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { DataTableModule } from 'angular5-data-table';
 
 import { MaterialModule } from '../shared/material-module';
 import { SitePagesRoutingModule } from './site-pages-routing.module';
@@ -14,7 +15,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LendComponent } from './lend/lend.component';
 import { LogComponent } from './log/log.component';
 import { RentComponent } from './rent/rent.component';
-import { StatusComponent } from './status/status.component';
+import { CustomerComponent } from './customer/customer.component';
+
+import { LendService } from '../site-pages/lend/lend.service';
+import { RentService } from '../site-pages/rent/rent.service';
+import { LogService } from './log/log.service';
+import { CustomerService } from './customer/customer.service';
 
 @NgModule ({
     imports: [
@@ -22,18 +28,24 @@ import { StatusComponent } from './status/status.component';
 		RouterModule.forChild(SitePagesRoutingModule),
 		MaterialModule,
 		HttpModule,
-		FormsModule,
+        FormsModule,
+        DataTableModule,
 		ReactiveFormsModule,
 		FlexLayoutModule,
 		CdkTableModule
     ],
-	providers: [],
+	providers: [
+        LendService,
+        RentService,
+        CustomerService,
+        LogService
+    ],
     declarations: [
         DashboardComponent,
         LendComponent,
         LogComponent,
         RentComponent,
-        StatusComponent
+        CustomerComponent
     ]
 })
 export class SitePagesModule {

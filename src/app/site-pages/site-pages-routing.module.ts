@@ -4,7 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LendComponent } from './lend/lend.component';
 import { LogComponent } from './log/log.component';
 import { RentComponent } from './rent/rent.component';
-import { StatusComponent } from './status/status.component';
+import { CustomerComponent } from './customer/customer.component';
 
 export const SitePagesRoutingModule: Routes = [
     {
@@ -20,7 +20,7 @@ export const SitePagesRoutingModule: Routes = [
 		path: 'rent',
 		component: RentComponent
 	}, {
-		path: 'status',
-		component: StatusComponent
+		path: 'customer',
+		component: CustomerComponent
 	}
 ];

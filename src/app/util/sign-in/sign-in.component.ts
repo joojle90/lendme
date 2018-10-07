@@ -78,6 +78,8 @@ export class SignInComponent implements OnInit, OnDestroy {
             if(this.userId.value === 'admin') {
                 localStorage.setItem("is_signIn", "true");
                 this.router.navigate(["/dashboard"]);
+            } else {
+                alert("Please try again");
             }
         }
     }

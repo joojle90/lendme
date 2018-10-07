@@ -11,7 +11,7 @@ const MENUITEMS = [
     {state: 'dashboard', type: 'link', name: 'Dashboard', icon: 'dashboard'},
     {state: 'lend', type: 'link', name: 'Investment', icon: 'monetization_on'},
     {state: 'rent', type: 'link', name: 'Borrower', icon: 'multiline_chart'},
-    {state: 'status', type: 'link', name: 'User status', icon: 'assessment'},
+    {state: 'customer', type: 'link', name: 'Customer details', icon: 'how_to_reg'},
     {state: 'log', type: 'link', name: 'Transaction log', icon: 'list_alt'}
 ];
 
